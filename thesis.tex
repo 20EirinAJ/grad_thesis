@@ -1,0 +1,100 @@
+\documentclass[a4paper,11pt,oneside]{jsreport}
+\usepackage{TitlePage}
+%\usepackage{Appendix}
+\usepackage{graphicx}
+\usepackage{fancyhdr}
+\usepackage{listings}
+
+% (著者名, 年)の引用符を使う場合、
+% \usepackage[authoryear,round]{natbib}
+% 本文中では \citep{} を使う。
+
+% 紙面の大きさ
+% \addtolength{\textheight}{2\topmargin}
+% \setlength{\topmargin}{0pt}
+% \addtolength{\textwidth}{0.51\marginparwidth}
+% \setlength{\marginparwidth}{0.49\marginparwidth}
+% \setlength{\evensidemargin}{\oddsidemargin}
+
+% Font の宣言
+\DeclareMathAlphabet{\bm}{OT1}{cmr}{bx}{it}     % bold-math
+\SetMathAlphabet{\bm}{bold}{OT1}{cmr}{bx}{it}   %
+% \DeclareFontShape{JY1}{mc}{m}{it}{<->ssub*gt/m/n}{} % To avoid useless warnging
+% \DeclareFontShape{JT1}{mc}{m}{it}{<->ssub*gt/m/n}{} % To avoid useless warnging
+% \DeclareFontShape{JY1}{gt}{m}{it}{<->ssub*gt/m/n}{} % To avoid useless warnging
+% \DeclareFontShape{JT1}{gt}{m}{it}{<->ssub*gt/m/n}{} % To avoid useless warnging
+
+\lstset{%
+  language={C},
+  basicstyle={\small},%
+  identifierstyle={\small},%
+  commentstyle={\small\itshape},%
+  keywordstyle={\small\bfseries},%
+  ndkeywordstyle={\small},%
+  stringstyle={\small\ttfamily},
+  frame={tb},
+  breaklines=true,
+  columns=[l]{fullflexible},%
+  numbers=left,%
+  xrightmargin=0zw,%
+  xleftmargin=3zw,%
+  numberstyle={\scriptsize},%
+  stepnumber=1,
+  numbersep=1zw,%
+  lineskip=-0.5ex%
+}
+
+\ronbun{2023年度学士論文}
+\professor{佐藤 健吾 教授}
+\shozoku{東京電機大学\\システムデザイン工学部 \\ 情報システム工学科 \\ 生命データサイエンス研究室}
+\title{拡散モデルによるRNAアプタマー配列の設計}
+\author{松本英倫}
+\studentID{学籍番号: 20AJ119}
+\date{令和 5 年度卒業論文}
+
+%\renewcommand{\bibname}{参考文献}
+
+\begin{document}
+% 表紙
+\maketitle
+
+% 目次
+\pagenumbering{roman}
+\setcounter{page}{1}
+\tableofcontents
+
+% 本文
+\newpage
+\pagenumbering{arabic}
+% 序論
+\input{intro}
+% 背景
+\input{previous}
+% 方法
+\input{method}
+% 結果
+\input{result}
+% 考察
+\input{discussion}
+% 結論
+\input{conclusion}
+% 謝辞
+\addcontentsline{toc}{chapter}{謝辞}
+\input{thanks}
+% 参考文献
+\input{reference}
+
+% % % 付録
+\appendix
+% 外部仕様
+\input{external}
+
+% \appendix{B}{内部仕様}
+% 内部仕様
+\input{internal}
+
+% ソースコード
+\input{source}
+
+\end{document}
+
